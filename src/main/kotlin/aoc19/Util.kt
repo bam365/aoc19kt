@@ -6,5 +6,8 @@ fun intSolution(fn: (Int) -> Int) = { input: String ->
 }
 
 fun intsSolution(fn: (Iterable<Int>) -> Int) = { input: String ->
-        fn(input.lines().map { it.toInt() }).toString()
+        input.lines()
+            .map { it.toInt() }
+            .let(fn)
+            .toString()
 }
