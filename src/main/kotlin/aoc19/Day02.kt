@@ -25,10 +25,7 @@ class Program(private val codes: List<Int>) {
             Opcodes.ADD.code -> Instruction.Add(codes[ip + 1], codes[ip + 2], codes[ip + 3])
             Opcodes.MUL.code -> Instruction.Mul(codes[ip + 1], codes[ip + 2], codes[ip + 3])
             Opcodes.EXIT.code -> Instruction.Exit()
-            else -> {
-                println(codes[ip])
-                throw IllegalStateException()
-            }
+            else -> throw IllegalStateException("Opcode not supported")
         }
     }
 
