@@ -19,4 +19,13 @@ class Aoc19Tests : StringSpec({
             day01(input) shouldBe output
         }
     }
+
+    "day 2" {
+        forall(
+            row("1,9,10,3,2,3,11,0,99,30,40,50", 3500),
+            row("1,1,1,4,99,5,6,0,99", 30)
+        ) { input, output ->
+            runProgram(Program(parseCodes(input)), 0).readPosition(0) shouldBe output
+        }
+    }
 })

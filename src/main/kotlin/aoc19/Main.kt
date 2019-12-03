@@ -1,8 +1,9 @@
 package aoc19
 
 
-val solutionTable = mapOf(
-    "1" to day01
+val solutionTable: Map<String, (String) -> String> = mapOf(
+    "1" to day01,
+    "2" to ::day02
 )
 
 fun main(args: Array<String>) {
